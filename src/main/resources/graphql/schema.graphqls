@@ -1,0 +1,18 @@
+type Athlete {
+    athleteId: ID!
+    age: Int!
+    name: String!
+    address: Address
+}
+
+type Address {
+    city: String!
+    street: String!
+    zipCode: String!
+}
+
+# (Queries)
+type Query {
+    getAthleteById(athleteId: ID!): Athlete
+    getAllAthletes: [Athlete]
+}
