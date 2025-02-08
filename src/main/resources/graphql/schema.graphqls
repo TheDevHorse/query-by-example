@@ -1,5 +1,5 @@
 type Athlete {
-    athleteId: ID!
+    id: ID!
     age: Int!
     name: String!
     address: Address
@@ -13,6 +13,6 @@ type Address {
 
 # (Queries)
 type Query {
-    getAthleteById(athleteId: ID!): Athlete
-    getAllAthletes: [Athlete]
+    athlete(id: ID!): Athlete
+    athletes: [Athlete]
 }

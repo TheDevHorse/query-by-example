@@ -7,24 +7,24 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Athlete {
 
     @Id
-    private String athleteId;
+    private String id;
     private int age;
     private String name;
     private Address address;
 
-    public Athlete(String athleteId, int age, String name, Address address) {
-        this.athleteId = athleteId;
+    public Athlete(String id, int age, String name, Address address) {
+        this.id = id;
         this.age = age;
         this.name = name;
         this.address = address;
     }
 
-    public String getAthleteId() {
-        return athleteId;
+    public String getId() {
+        return id;
     }
 
-    public void setAthleteId(String athleteId) {
-        this.athleteId = athleteId;
+    public void setId(String id) {
+        this.id = id;
     }
 
     public int getAge() {
@@ -54,7 +54,7 @@ public class Athlete {
     @Override
     public String toString() {
         return "Athlete{" +
-                "athleteId='" + athleteId + '\'' +
+                "id='" + id + '\'' +
                 ", age=" + age +
                 ", name='" + name + '\'' +
                 ", address=" + address +
