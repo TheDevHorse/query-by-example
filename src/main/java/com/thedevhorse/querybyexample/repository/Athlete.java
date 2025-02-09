@@ -3,16 +3,16 @@ package com.thedevhorse.querybyexample.repository;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document
+@Document(collection = "athlete")
 public class Athlete {
 
     @Id
     private String id;
-    private int age;
+    private Integer age;
     private String name;
     private Address address;
 
-    public Athlete(String id, int age, String name, Address address) {
+    public Athlete(String id, Integer age, String name, Address address) {
         this.id = id;
         this.age = age;
         this.name = name;
@@ -27,11 +27,11 @@ public class Athlete {
         this.id = id;
     }
 
-    public int getAge() {
+    public Integer getAge() {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(Integer age) {
         this.age = age;
     }
 
