@@ -1,4 +1,4 @@
-package repository;
+package com.thedevhorse.querybyexample.repository;
 
 public class Address {
 
@@ -6,7 +6,11 @@ public class Address {
     private String street;
     private String zipCode;
 
-    public Address(){}
+    public Address(String city, String street, String zipCode) {
+        this.city = city;
+        this.street = street;
+        this.zipCode = zipCode;
+    }
 
     public String getCity() {
         return city;
