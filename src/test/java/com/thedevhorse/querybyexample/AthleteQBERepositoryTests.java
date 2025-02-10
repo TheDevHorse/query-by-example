@@ -1,13 +1,17 @@
 package com.thedevhorse.querybyexample;
 
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
+import com.thedevhorse.querybyexample.repository.AthleteQBERepository;
+import org.junit.jupiter.api.BeforeEach;
+import org.springframework.beans.factory.annotation.Autowired;
 
-@SpringBootTest
-class AthleteQBERepositoryTests {
+class AthleteQBERepositoryTests extends AbstractBaseIntegrationTest {
 
-    @Test
-    void contextLoads() {
+
+    @Autowired
+    private AthleteQBERepository athleteQBERepository;
+
+    @BeforeEach
+    void setUp() {
+
     }
-
 }

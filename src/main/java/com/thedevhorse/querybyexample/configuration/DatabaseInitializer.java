@@ -18,15 +18,15 @@ public class DatabaseInitializer implements CommandLineRunner {
     @Override
     public void run(String... args) {
         Address address = new Address(
-                "Lisboa",
-                "Rua das Flores",
-                "1000-001"
+                "Nova Iorque",
+                "5th Avenue",
+                "10001"
         );
 
         Athlete athlete = new Athlete(
-                "SOC-001",
-                25,
-                "Cristiano Ronaldo",
+                "INT-999",
+                28,
+                "Jake Thompson",
                 address
         );
 
