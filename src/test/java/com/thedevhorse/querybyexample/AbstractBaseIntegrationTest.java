@@ -9,8 +9,6 @@ import org.testcontainers.junit.jupiter.Container;
 import org.testcontainers.junit.jupiter.Testcontainers;
 
 @Testcontainers
-@AutoConfigureHttpGraphQlTester
-@SpringBootTest
 public abstract class AbstractBaseIntegrationTest {
 
     @Container

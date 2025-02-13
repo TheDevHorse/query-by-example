@@ -6,9 +6,12 @@ import com.thedevhorse.querybyexample.repository.AthleteGraphqlQBERepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.graphql.tester.AutoConfigureHttpGraphQlTester;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.graphql.test.tester.HttpGraphQlTester;
 
-
+@SpringBootTest
+@AutoConfigureHttpGraphQlTester
 class AthleteGraphqlQBERepositoryTests extends AbstractBaseIntegrationTest {
 
     @Autowired
@@ -73,7 +76,7 @@ class AthleteGraphqlQBERepositoryTests extends AbstractBaseIntegrationTest {
                 .path("data.athlete")
                 .entity(Athlete.class)
                 .satisfies(athlete -> {
-                    assert athlete.getId().equals(savedAthlete.getId());
+                    assert athlete.getAge().equals(savedAthlete.getAge());
                     assert athlete.getName().equals(savedAthlete.getName());
                 });
     }

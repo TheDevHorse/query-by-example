@@ -6,12 +6,14 @@ import com.thedevhorse.querybyexample.repository.AthleteQBERepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.domain.Example;
 
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+@SpringBootTest
 class AthleteQBERepositoryTests extends AbstractBaseIntegrationTest {
 
     @Autowired
