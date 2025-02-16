@@ -1,4 +1,4 @@
-# Query by Example (QBE) with GraphQL and Standard Approach  
+# Query by Example (QBE) 
 
 ## Introduction  
 
