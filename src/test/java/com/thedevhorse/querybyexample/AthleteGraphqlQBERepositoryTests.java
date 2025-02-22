@@ -10,6 +10,8 @@ import org.springframework.boot.test.autoconfigure.graphql.tester.AutoConfigureH
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.graphql.test.tester.HttpGraphQlTester;
 
+import java.util.Map;
+
 @SpringBootTest
 @AutoConfigureHttpGraphQlTester
 class AthleteGraphqlQBERepositoryTests extends AbstractBaseIntegrationTest {
@@ -55,6 +57,30 @@ class AthleteGraphqlQBERepositoryTests extends AbstractBaseIntegrationTest {
                 .path("data.athletes")
                 .entityList(Athlete.class)
                 .hasSize(1);
+    }
+
+    @Test
+    void givenName_whenFindByName_thenAthleteIsFound() {
+        String document = """
+                    query($athleteRequest: AthleteRequest!) {
+                        athletes(athlete: $athleteRequest) {
+                            id
+                            age
+                            name
+                        }
+                    }
+                """;
+
+        graphQlTester.document(document)
+                .variable("athleteRequest", Map.of("name", "Jake Thompson"))
+                .execute()
+                .path("data.athletes")
+                .entityList(Athlete.class)
+                .hasSize(1)
+                .satisfies(athletes -> {
+                            assert athletes.getFirst().getName().equals("Jake Thompson");
+                        }
+                );
     }
 
     @Test

@@ -11,8 +11,13 @@ type Address {
     zipCode: String!
 }
 
+input AthleteRequest {
+    name: String
+    age: String
+}
+
 # (Queries)
 type Query {
     athlete(id: ID!): Athlete
-    athletes: [Athlete]
+    athletes(athlete: AthleteRequest): [Athlete]!
 }
